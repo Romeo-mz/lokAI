@@ -26,18 +26,32 @@ jobs:
 
       - name: Download dependencies
         run: go mod download
+        # use bash on Windows to keep commands consistent
+        shell: bash
 
       - name: Verify dependencies
         run: go mod verify
+        shell: bash
 
       - name: Build
         run: go build -v ./...
+        shell: bash
 
       - name: Vet
         run: go vet ./...
+        shell: bash
 
       - name: Test
-        run: go test -v -race -coverprofile=coverage.out ./...
+        # On Windows runners, PowerShell is default; use bash for consistency
+        # Some Windows environments may not support -race for certain toolchains,
+        # so skip -race on non-amd64 or when unsupported.
+        run: |
+          if [ "${RUNNER_OS}" = "Windows" ] && [ "$(go env GOARCH)" != "amd64" ]; then
+            go test -v -coverprofile=coverage.out ./...
+          else
+            go test -v -race -coverprofile=coverage.out ./...
+          fi
+        shell: bash
 
       - name: Upload coverage
         if: matrix.os == 'ubuntu-latest'
