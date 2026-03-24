@@ -41,7 +41,7 @@ func RunQuestionnaire(specs *hardware.HardwareSpecs, hasInstalledModels bool) (*
 					huh.NewOption("🖼  Image Gen — Image generation (Stable Diffusion, FLUX)", "image"),
 					huh.NewOption("🎬 Video — Video generation (requires ComfyUI pipeline)", "video"),
 					huh.NewOption("🎙  Audio — Speech-to-text & text-to-speech", "audio"),
-					huh.NewOption("🔓 Uncensored — Models without content filters (NSFW)", "nsfw"),
+					huh.NewOption("🔓 Uncensored — Models without content filters (Uncensored)", "nsfw"),
 				).
 				Value(&useCase),
 		),

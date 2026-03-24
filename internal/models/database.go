@@ -619,9 +619,9 @@ var Catalog = []ModelEntry{
 	},
 
 	// ═══════════════════════════════════════════
-	// NSFW / UNCENSORED
+	// Uncensored / UNCENSORED
 	// Models without built-in content filters.
-	// For image/video NSFW generation, use Stable Diffusion
+	// For image/video Uncensored generation, use Stable Diffusion
 	// (ComfyUI, A1111, Forge) with appropriate checkpoints.
 	// ═══════════════════════════════════════════
 	{
@@ -750,7 +750,7 @@ var contextLengths = map[string]int{
 	"deepseek-r1:32b":   128,
 	"qwq:32b":            32,
 	"deepseek-r1:70b":   128,
-	// NSFW
+	// Uncensored
 	"dolphin-phi:2.7b":              2,
 	"llama2-uncensored:7b":          4,
 	"dolphin-mistral:7b":           32,
