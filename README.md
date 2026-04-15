@@ -2,7 +2,7 @@
 
 # 🤖 lokai
 
-![](docs/demo.gif)
+![](docs/output.gif)
 
 **Find the best local AI model for your hardware — automatically**
 
@@ -42,7 +42,7 @@ Includes native **ComfyUI integration** for image & video generation.
 6. **Generates images** — when ComfyUI is running, queue a generation directly from lokai
 
 ## Quick Start
-
+![alt text](docs/image.png)
 ### Install
 
 ```bash
